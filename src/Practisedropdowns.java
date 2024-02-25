@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+// import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+// import org.testng.Assert;
 
 public class Practisedropdowns {
 
@@ -21,7 +21,7 @@ public class Practisedropdowns {
 		city(driver);
 		
 	//	Assert.assertTrue(driver.findElement(By.xpath("//input[@id='autosuggest']")).getText().equalsIgnoreCase("India"));
-		driver.quit();
+		// driver.quit();
 
 	}
 	
@@ -42,13 +42,13 @@ public class Practisedropdowns {
 	}
 
 	public static void city(WebDriver driver) {
-		WebDriverWait e = new WebDriverWait(driver,Duration.ofSeconds(3));
+		WebDriverWait e = new WebDriverWait(driver,Duration.ofSeconds(20));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_0")).click();
-		driver.findElement(By.xpath("//select[@id='ctl00_mainContent_ddl_originStation1']")).click();
+		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
 		
 		driver.findElement(By.xpath("//div[@ID='glsctl00_mainContent_ddl_originStation1_CTNR']/table/tbody/tr[2]/td[2]/div[3]/div/div/ul[2]/li[6]")).click();
-		e.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//div[@ID='dropdownGroup1']/div/ul[3]/li[5])[2]"))));
+		e.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@ID='dropdownGroup1']/div/ul[3]/li[5])[2]")));
 		driver.findElement(By.xpath("(//div[@ID='dropdownGroup1']/div/ul[3]/li[5])[2]")).click();
 		
 		
