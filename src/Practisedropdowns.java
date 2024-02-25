@@ -29,7 +29,7 @@ public class Practisedropdowns {
 
 	}
 	
-	public static void country(WebDriver driver)
+	public static void country(WebDriver driver)  //test
 	{
 		String ini = "IND";
 		driver.findElement(By.id("autosuggest")).sendKeys(ini);
