@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 
 
@@ -23,9 +24,9 @@ public class Assignment1 {
 	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		driver.findElement(By.id("checkBoxOption1")).click();
-	//	Assert.assertTrue(driver.findElement(By.id("checkBoxOption1")).isSelected());  //Checks if the checkbox is checked
+	Assert.assertTrue(driver.findElement(By.id("checkBoxOption1")).isSelected());  //Checks if the checkbox is checked
 		driver.findElement(By.id("checkBoxOption1")).click();
-	//	Assert.assertFalse(driver.findElement(By.id("checkBoxOption1")).isSelected());  //checks if the checkbox is  unchecked
+	Assert.assertFalse(driver.findElement(By.id("checkBoxOption1")).isSelected());  //checks if the checkbox is  unchecked
 		
 		List<WebElement> check = driver.findElements(By.xpath("//div[@id='checkbox-example']/fieldset/label/input"));
 		
