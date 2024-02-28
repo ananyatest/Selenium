@@ -12,14 +12,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class EcommerceBasic {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 		driver.manage().window().maximize();
-		addtocart(driver);
+	//	addtocart(driver);
 	//	addtocart1(driver);
-	checkout(driver);
-	//	search(driver);
+	// checkout(driver);
+	search(driver);
 
 	}
 	
@@ -127,4 +127,27 @@ public class EcommerceBasic {
 		driver.findElement(By.xpath("//button[text()='Proceed']")).click();
 		
 	}
+
+public static void search(WebDriver driver) throws InterruptedException
+{
+	String find = "ca";
+	
+	driver.findElement(By.xpath("//input[@class='search-keyword']")).sendKeys(find);
+	Thread.sleep(2000);
+	
+	List<WebElement> s = driver.findElements(By.xpath("//h4[@class='product-name']"));
+	int size = s.size();
+	System.out.println("number of elements found are"+ size);
+	
+	if(size>0)
+	{
+		for(int i=0;i<size;i++)
+		{
+			System.out.println(s.get(i).getText());
+		}
+	}
+	
+	
+}
+
 }
