@@ -16,11 +16,11 @@ public class EcommerceBasic {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 		driver.manage().window().maximize();
-	//	addtocart(driver);
-	//	addtocart1(driver);
-	// checkout(driver);
+		addtocart(driver);
+	addtocart1(driver);
+	 checkout(driver);
 	search(driver);
-
+driver.quit();
 	}
 	
 	
@@ -137,7 +137,7 @@ public static void search(WebDriver driver) throws InterruptedException
 	
 	List<WebElement> s = driver.findElements(By.xpath("//h4[@class='product-name']"));
 	int size = s.size();
-	System.out.println("number of elements found are"+ size);
+	System.out.println("number of elements found are "+ size);
 	
 	if(size>0)
 	{
