@@ -73,15 +73,10 @@ public class calendar {
 		{
 			Assert.assertEquals(dates.get(i+1).getAttribute("value"), ordate.get(i));
 		}
-	//Assert.assertEquals(getdate[0], year);
-	
-	
 	
 	}
 	
-	/*
-
-	public static void calendarproper(WebDriver driver, String day, String month, String year)
+	/* public static void calendarproper(WebDriver driver, String day, String month, String year)
 	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 	
@@ -162,10 +157,6 @@ public class calendar {
 			}
 			
 		}
-		
-		
-		
-		
 		
 	} */
 
