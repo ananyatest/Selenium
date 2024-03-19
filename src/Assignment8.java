@@ -34,7 +34,9 @@ public class Assignment8 {
 		List<WebElement> list = driver.findElements(By.xpath("//ul[@id='ui-id-1']/li"));
 		Assert.assertEquals(driver.findElement(By.id("autocomplete")).getAttribute("value"), list.get(0).getText());
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src,new File("\\screenshot1.jpg"));
+		
+		//saving file to mac system
+		FileUtils.copyFile(src,new File("\\screenshot1.jpg"));  
 		driver.quit();
 	}
 
