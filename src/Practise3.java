@@ -12,15 +12,27 @@ public class Practise3 {
 	public static void main(String[] args) {
 	
 		WebDriver driver = new ChromeDriver();
-		test1(driver);
+	//	test1(driver);
+		search(driver);
 		driver.quit();
 		
 	}
 
-	private static String getprice(WebElement s) {
-		String p= s.findElement(By.xpath("following-sibling::td[1]")).getText();
-		return p;
+	private static void search(WebDriver driver) {
+		String item = "Ri";
+		String text =item.toLowerCase();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.findElement(By.id("search-field")).sendKeys(text);
+		List<WebElement> searchlist = driver.findElements(By.xpath("//tr/td[1]"));
+		List<String> l=  searchlist.stream().map(m->m.getText().toLowerCase()).filter(m->m.contains(text)).collect(Collectors.toList());
+		
+		 Assert.assertEquals(searchlist.size(),l.size());
+		 
+	
 	}
+
+	
 	
 	public static void test1(WebDriver driver)
 	{
@@ -46,6 +58,11 @@ public class Practise3 {
 		
 	//	list1.forEach(a->System.out.println(a));
 		driver.quit();
+	}
+	
+	private static String getprice(WebElement s) {
+		String p= s.findElement(By.xpath("following-sibling::td[1]")).getText();
+		return p;
 	}
 
 	
