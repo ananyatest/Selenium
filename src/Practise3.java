@@ -12,9 +12,9 @@ public class Practise3 {
 	public static void main(String[] args) {
 	
 		WebDriver driver = new ChromeDriver();
-	//	test1(driver);
+		test1(driver);
 		search(driver);
-		driver.quit();
+	driver.quit();
 		
 	}
 
